@@ -1,5 +1,12 @@
-extends layout
-
+extends common/layout
 block content
-  h1= title
-  p Welcome to #{title}
+	div(class="container")
+		div(class='div-fluid show-grid')
+			div(class='row')
+				div(class='span8')
+					-var text="随从上来矮身推了羽然一把，羽然摔倒在地下。平生第一次，她觉得自己从高高在上的树梢跌落到了尘埃里，无助和凄惶一起涌上心头，她愤怒地指着商人：要是在宁州的土地上，我会下令把你们都杀了！";
+					p=text
+				div(class='span4')
+					div(class='well')
+						include login/partlogin
+		include common/footer

@@ -1,8 +1,47 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+﻿body {
+    padding:60px 0 40px;
 }
 
 a {
   color: #00B7FF;
+}
+
+ol li small{
+    color:#888;
+    font-size:10px;
+}
+
+ul{
+    list-style:none;
+}
+
+.navbar-inner {
+    background-color:#f58220;  
+  /* Gradients for modern browsers, replace as you see fit */  
+  background-image: -moz-linear-gradient(top, #f58220, #fedcbd);  
+  background-image: -ms-linear-gradient(top, #f58220, #fedcbd);  
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f58220), to(#fedcbd));  
+  background-image: -webkit-linear-gradient(top, #555, #555);  
+  background-image: -o-linear-gradient(top, #f58220, #fedcbd);  
+  background-image: linear-gradient(top, #f58220, #fedcbd);  
+  background-repeat: repeat-x; 
+}
+
+form.indexLogin label.control-label{
+    width:auto;
+}
+
+form.indexLogin .controls{
+    margin-left:30px;
+}
+
+.inline input[type="radio"], .inline input[type="checkbox"]{
+    margin:0;
+}
+
+#radio{
+    position:fixed;
+    bottom:0px;
+    width:300px;
+    right:0px;
 }
