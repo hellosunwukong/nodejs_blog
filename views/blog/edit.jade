@@ -1,0 +1,29 @@
+extends ../common/layout
+block content
+	div(class='edit_panel')
+		form(class='form-horizontal',method='post',action='/postblog')
+			div(class='edit_title_row')
+				div(class='col-xs-6')
+					input(type='text' value="" placeholder='标题' class='form-control title_input' name='blog_title')
+			div(class='edit_toolbar_row')
+				div(class='col-xs-6')
+					div(class='btn-toolbar')
+						div(class="btn-group")
+							a(class='btn btn-primary')
+								span(class='fui-time')
+							a(class='btn btn-primary')
+								span(class='fui-photo')
+							a(class='btn btn-primary')
+								span(class='fui-photo')
+							a(class='btn btn-primary')
+								span(class='fui-photo')
+			div(class='edit_content_row')
+				div(class='col-xs-6')
+					textarea(type='text' value="" placeholder='正文' class='form-control content_input' name='blog_content')
+			div(class='edit_submit_row')
+				div(class='col-xs-6')
+					div(class='submit_button')
+						button(class='btn btn-block btn-lg btn-inverse')  发表
+					div(class='submit_button')
+						button(class='btn btn-block btn-lg btn-inverse') 保存草稿
+	include ../common/footer

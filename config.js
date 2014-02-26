@@ -2,46 +2,51 @@
 用户配置文件 author flex
 */
 var config={
-	cookieSecret:'flex-fury',
+	cookieSecret:'flex-blog',
 	dbname: 'node-mongo-furydb',
 	dbhost:'127.0.0.1',
+	cookiepath:'127.0.0.1',
 	dbport:27017,
 	rootdir:'',
+	csshost:'',
 	is_login: false,
 	web:{
-	port:process.env.WEB_PORT || 8080
+	port:process.env.WEB_PORT || 3000,
+	host:'http://222.195.149.108'
 	},
 	dir:{
 	viewdir:'',
 	bootstrapdir:'javascripts/bootstrap/css'
 	},
-	menus:[{
-		text:'首页',
+	loginnavs:[
+	{
+		text:'最新',
 		href:'/'
+	},
+	{
+		text:'我的主页',
+		href:'/home'
+	},
+	{
+		text:'POST',
+		href:'/editblog'
 	}],
-	navs:[{
-			text: '登录',
-			href: '/login'
-		},
+	navs:[
 		{
-			text: '注册',
-			href: '/register'
+			text:'最新',
+			href:'/home'
 		}],
-	loginnavs: [{
-	    text:'写日记',
-	    href:'/diary/write'
-	},
-	{
-		text: '帐号设置',
-		href: '/set'
-	},
-	{
-		text: '登出',
-		href: '/logout'
+	func:[{
+		text:'登陆',
+		href:'/login'
+	},{
+		text:'注册',
+		href:'/register'
 	}],
-	adminnav:[{
-		text: '登出',
-		href: '/logout'
+	loginfunc:[{
+		text:'注销',
+		href:'/logout'
 	}]
+	
 };
 module.exports=config;

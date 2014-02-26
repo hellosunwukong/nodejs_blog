@@ -1,12 +1,30 @@
 extends common/layout
 block content
-	div(class="container")
-		div(class='div-fluid show-grid')
-			div(class='row')
-				div(class='span8')
-					-var text="随从上来矮身推了羽然一把，羽然摔倒在地下。平生第一次，她觉得自己从高高在上的树梢跌落到了尘埃里，无助和凄惶一起涌上心头，她愤怒地指着商人：要是在宁州的土地上，我会下令把你们都杀了！";
-					p=text
-				div(class='span4')
-					div(class='well')
-						include login/partlogin
-		include common/footer
+	div(class='row wrapper')
+		div(class='col-xs-12')
+			div(class='content')
+				div(class='blog_row')
+					div(class='blog_top')
+						img(src='http://www.gravatar.com/avatar/8b801bb6de1a876f7df749cedb8994a6?s=48' title='ideas')
+						a 作者
+						span
+							b 标题
+					div(class='blog_content')
+						p contentcontentcontentcontentcontentcontentcontent123123211111111111111111111111111111111
+					div(class='blog_btm')
+						ul
+							li
+								a up
+							li
+								a down
+						ul(class='blog_btm_comm')
+							li comments
+	include common/footer
+	script(src='js/jquery-1.8.3.min.js')
+	script(src='js/jquery-ui-1.10.3.custom.min.js')
+	script(src='js/bootstrap-select.js')
+	script(src='js/bootstrap-switch.js')
+	script(src='js/flatui-checkbox.js')
+	script(src='js/flatui-radio.js')
+	script(src='js/jquery.tagsinput.js')
+	script(src='js/jquery.placeholder.js')

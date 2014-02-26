@@ -1,3 +1,4 @@
 var blog = require('./app');
-
-blog.start({});
+blog.start({
+	rootdir:__dirname,
+});

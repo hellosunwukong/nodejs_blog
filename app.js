@@ -1,26 +1,20 @@
-
-/**
- * Module dependencies.
- */
 var express = require('express'),
 config = require('./config'),
-app = express();
-var MongoStore = require('connect-mongo')(express);
-var path = require('path');
-var http = require('http');
-var routes = require('./routes');
+app = express.createServer(),
+path = require('path'),
+http = require('http'),
+routes = require('./routes'),
+crypto = require('crypto'),
+MongoStore = require('connect-mongo')(express);
 flash = require('connect-flash');
-var crypto = require('crypto'), //密码加密模块
-User = require('./model/user.js'); //引入用户登录函数
 // Configuration
 function Configuration(app, rootdir) {
 	app.set('views', path.join(config.dir.viewdir, 'views'));
 	app.set('view engine', 'jade');
 	app.use(flash());
 	app.use(express.methodOverride());
-	//Cookie 解析的中间件
 	app.use(express.cookieParser());
-	//提供会话支持
+	app.use(express.logger('dev'));
 	app.use(express.session({
 	  secret: config.cookieSecret,
 	  key: config.dbname,
@@ -29,8 +23,9 @@ function Configuration(app, rootdir) {
 	    db: config.dbname
 	  })
 	}));
-	app.use(app.router);
+	app.use(express.bodyParser());
 	app.use(express.static(path.join(__dirname, 'public')));
+	app.use(app.router);
 
 	// development only
 	if ('development' == app.get('env')) {
@@ -54,4 +49,3 @@ exports.start = function(conf) {
 	server = app.listen(config.web.port);
 	console.log("服务器启动成功.");
 };
-

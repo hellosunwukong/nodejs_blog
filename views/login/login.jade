@@ -2,24 +2,23 @@ extends ../common/layout
 block content
   div(class='container')
     form(class='form-horizontal',method='post',action='/login')
-      input(type='hidden',value="",name="next_url")
-      legend 登录本站
-         
-      div(class='control-group validation-container')
-        label(class='control-label',for='J_email') 邮箱
-        div(class='controls')
-          input(id='J_email',type='text',class='input-xlarge',placeholder='Email',name='email')
-      div(class='control-group validation-container')
-        label(class='control-label',for='J_pwd') 密码
-        div(class='controls')
-          input(id='J_pwd',type='password',class='input-xlarge',placeholder='Password',name='pwd')
-      div(class='control-group')
-        div(class='controls')
-          p
-            a(href='/forgot/') 忘记密码 &nbsp;
-            a(href='/register/') 注册 
-          label(class='checkbox') 记住我
-            input(type='checkbox',name='remember')
-          button(type='submit',class='btn btn-primary') 登入
-    include ../common/footer
+      if(session.error.length)
+        div(class='alert') #{session.error}
+          a(class='close',data-dismiss='alert') &times;
+      div(class='login')
+        div(class='login-screen')
+          div(class='login-icon')
+            img(src='images/login/icon.png' alt='欢迎来到Blogger')
+            h4 欢迎来到
+              small blogger
+          div(class='login-form')
+            div(class='form-group')
+              input(type='text' class='form-control login-field' name='account' value='' placeholder='登陆邮箱' id='_account')
+              label(class='login-field-icon fui-user' for='login-name')
+            div(class='form-group')
+              input(type='password' class='form-control login-field' name='password' value='' placeholder='密码' id='_password')
+              label(class='login-field-icon fui-lock' for='login-pass')
+            button(class='btn btn-primary btn-lg btn-block' href='') 登陆
+            a(class='login-link' href='') 忘记密码?
+  include ../common/footer
   script
