@@ -8,12 +8,28 @@
   "dependencies": {
     "express": "3.4.8",
     "jade": "*",
-    "connect-mongo":"0.4.0",
-    "eventproxy":"0.2.6",
-    "nodemailer":"0.3.12",
-    "imagemagick":"0.1.2",
-    "calendar":"0.1.0",
-    "connect-flash":"0.1.1",
-    "crypto":"0.0.3"
-  }
+    "connect-mongo": "0.4.0",
+    "eventproxy": "0.2.6",
+    "nodemailer": "0.3.12",
+    "imagemagick": "0.1.2",
+    "calendar": "0.1.0",
+    "connect-flash": "0.1.1",
+    "crypto": "0.0.3"
+  },
+  "description": "nodejs_blog\r ===========",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hellosunwukong/nodejs_blog.git"
+  },
+  "keywords": [
+    "nodejs_blog"
+  ],
+  "author": "flex",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/hellosunwukong/nodejs_blog/issues"
+  },
+  "homepage": "https://github.com/hellosunwukong/nodejs_blog"
 }

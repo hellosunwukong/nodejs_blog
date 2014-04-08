@@ -1,0 +1,23 @@
+extends ../common/layout
+block content
+  div(class='container')
+    form(class='form-horizontal',method='post',action='/login')
+      if(session.error.length)
+        div(class='alert') #{session.error}
+          a(class='close',data-dismiss='alert') &times;
+      div(class='login')
+        div(class='login-screen')
+          div(class='login-title')
+          div(class='login-icon')
+            img(src='images/login/icon.png' alt='欢迎来到Mark笔记')
+            h4 欢迎您
+          div(class='login-form')
+            div(class='form-group')
+              input(type='text' class='form-control login-field' name='account' value='' placeholder='注册邮箱' id='_account')
+              label(class='login-field-icon fui-user' for='login-name')
+            div(class='form-group')
+              input(type='password' class='form-control login-field' name='password' value='' placeholder='密码' id='_password')
+              label(class='login-field-icon fui-lock' for='login-pass')
+            button(class='btn btn-primary btn-lg btn-block' href='') 登陆
+            a(class='login-link' href='') 忘记密码?
+  include ../common/footer

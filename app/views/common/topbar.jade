@@ -1,0 +1,36 @@
+nav(class='navbar navbar-inverse' role='navigation')
+	div(class='container')
+		div(class='navbar-header')
+			button(type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbar-collapse')
+				span(class='sr-only') Toggle navigation
+				span(class='icon-bar')
+				span(class='icon-bar')
+				span(class='icon-bar')
+			a(class='navbar-brand') Mark笔记
+		div(class='collapse navbar-collapse' id='navbar-collapse')
+			ul(class='nav navbar-nav')
+				if(session.is_login)
+					for item in config.usernavs
+						li 
+							a(href='#{item.href}') #{item.text}
+				else
+					for item in config.guestnavs
+						li
+							a(href='#{item.href}') #{item.text}
+				li
+					form(class='navbar-form' role='search')
+						div(class='form-group')
+							div(class='input-group')
+								input(class='form-control' type='search' placeholder='搜索')
+								span(class='search-button')
+									button(type='submit' class='btn')
+										span(class='fui-search')
+			ul(class='nav navbar-nav navbar-right')
+				if(session.is_login)
+					for item in config.userfuncs
+						li
+							a(href='#{item.href}') #{item.text}
+				else
+					for item in config.guestfuncs
+						li
+							a(href='#{item.href}') #{item.text}

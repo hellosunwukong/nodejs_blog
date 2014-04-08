@@ -1,0 +1,39 @@
+extends ./common/layout
+block content
+	div(class='row wrapper')
+		div(class='col-xs-12')
+			div(class='content')
+				if(articles)
+					for item in articles
+						div(class='blog_row')
+							div(class='blog_top')
+								img(src='images/avatar/default.jpg' class='user_avatar')
+								a(class='username' href='') #{item.authorname}
+								a(class='blog_title' href='') #{item.title}
+							div(class='blog_content')
+								p !{item.body}
+							div(class='blog_btm')
+								ul
+									li
+										a 顶()
+									li
+										a 踩()
+								ul(class='blog_btm_comm')
+									li 评论()
+					if(articles.length>4)
+						div(class='pagination btm_pagbar') 
+							ul
+								li(class='previous' id='pre_page')
+									a(class='fui-arrow-left')
+								-for(var i=1;i<=pages;i++){
+									if(i==session.blog_page)
+										li(class='active')
+											a #{i}
+									else
+										li
+											a(href='/newblogs/#{i}') #{i}
+								-}
+								li(class='next' id='next_page')
+									a(class='fui-arrow-right')
+	include common/footer
+	script(src='js/jquery-1.8.3.min.js')

@@ -8,11 +8,8 @@ error=require('./routes/error');
 
 module.exports=function(app)
 {
-	// app.redirect('/home', '/');
-	
-
-	app.get('/', index.index);
-	app.get('/home', index.index);
+	app.get('/', blog.getblogs);
+	app.get('/home', blog.getblogs);
 
 	app.get('/register',register.index);
 	app.post('/register/invite',register.invite);
@@ -24,7 +21,4 @@ module.exports=function(app)
 
 	app.get('/editblog',blog.editblog);
 	app.post('/postblog',blog.createblog);
-	app.get('*',error.notFound);
-	app.post('*',error.notFound);
-
 };

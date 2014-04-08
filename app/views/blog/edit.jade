@@ -1,0 +1,16 @@
+extends ../common/layout
+block content
+	div(class='edit_panel')
+		form(class='form-horizontal',method='post',action='/postblog')
+			div(class='edit_panel')
+				div(class='edit_title_row')
+					div(class='col-xs-6')
+						input(type='text' value="" placeholder='标题' class='form-control title_input' name='blog_title')
+				div(class='edit_content_row')
+					div(class='col-xs-6')
+						textarea(name='blog_content' id='area3' class='form-control content_input')
+				div(class='edit_submit_row')
+					div(class='col-xs-6')
+						div(class='submit_button')
+							button(class='btn btn-primary btn-wide') 发表
+	include ../common/footer
